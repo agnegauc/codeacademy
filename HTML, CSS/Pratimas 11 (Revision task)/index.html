@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container,
+        .container2 {
+            display: flex;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .container {
+            justify-content: space-evenly;
+        }
+
+        .container2 {
+            justify-content: space-between;
+        }
+
+        header {
+            background-image: url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000);
+            filter: drop-shadow(30px 10px 4px #7d7deb);
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        .container>a:nth-child(even):hover {
+            text-decoration: underline;
+        }
+
+        .container2>a:nth-child(odd):hover {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .container2>a:nth-child(odd):hover::first-letter {
+            text-transform: lowercase;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="#">Home</a>
+            <a href="#">About us</a>
+            <a href="#">Shop</a>
+            <a href="#">Classes</a>
+            <a href="#">Book now</a>
+        </div>
+        <div class="container2">
+            <a href="../Pratimas 12 (Football results)/index.html">Link to another page</a>
+            <a href="../Pratimas 10 (Aviva)/index.html">Link to another page</a>
+        </div>
+    </header>
+</body>
+
+</html>

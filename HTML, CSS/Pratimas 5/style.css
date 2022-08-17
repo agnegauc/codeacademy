@@ -1,0 +1,27 @@
+body {
+    font-family: 'Uchen', serif;
+}
+
+main {
+    font-family: 'Nunito', sans-serif;
+}
+
+footer {
+    font-family: 'Nunito', sans-serif;
+}
+
+html {
+    background-image: url(5630974.jpg);
+}
+
+header {
+    background-color: aliceblue;
+}
+
+footer {
+    background-color: aliceblue;
+}
+
+a {
+    color: rgb(59, 158, 92);
+}

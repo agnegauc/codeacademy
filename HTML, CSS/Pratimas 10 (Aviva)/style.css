@@ -1,0 +1,100 @@
+body {
+    color: #fffff0;
+}
+
+.content-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: black;
+    text-align: center;
+}
+
+header img {
+    width: 10rem;
+    padding-top: 1rem;
+}
+
+
+header h1 {
+    text-align: left;
+    color: white;
+}
+
+header nav {
+    background-color: rgb(165, 163, 8);
+    text-align: right;
+    padding: 1rem
+}
+
+header nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: white;
+}
+
+header nav a:last-child {
+    margin-right: 0;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+section .content-wrapper {
+    color: black;
+    text-align: center;
+    padding: 20px 0
+}
+
+section .content-wrapper p {
+    text-align: justify;
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    text-align: left;
+}
+
+section .content-wrapper a {
+    padding: 10px 50px;
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+}
+
+#tables {
+    background-color: rgb(50, 50, 197);
+}
+
+#tables h2 {
+    color: white
+}
+
+table,
+th,
+td {
+    border: 2px solid red;
+    border-collapse: collapse;
+    color: white;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    padding: 10px
+}
+
+tr:last-child,
+td:last-child {
+    text-align: right;
+    font-weight: bold;
+}
+
+section .content-wrapper a:hover {
+    background-color: blue;
+}

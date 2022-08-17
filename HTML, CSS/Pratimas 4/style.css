@@ -1,0 +1,16 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+a {
+    color: rgb(0, 0, 255);
+}
+.lorem {
+    font-style: italic;
+}
+.bold {
+    font-weight: 900;
+}
+.green {
+    color: greenyellow;
+}

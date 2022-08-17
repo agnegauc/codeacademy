@@ -1,0 +1,42 @@
+html {
+    background-image: url(https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: 100%;
+}
+
+main {
+
+    background-color: white;
+    max-width: 30%;
+    margin: 0 auto;
+    padding: 2rem 5rem;
+    margin-top: 2rem;
+}
+
+main>h1 {
+    text-align: center;
+}
+
+main form input,
+main form textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    padding: 5px 5px 5px 0;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+
+main form input:focus,
+main form textarea:focus {
+    outline: none;
+    border-bottom: 1px solid aqua;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    width: 30%;
+    cursor: pointer;
+    position: relative;
+}
