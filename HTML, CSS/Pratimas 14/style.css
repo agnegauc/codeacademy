@@ -1,0 +1,57 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(107, 203, 107);
+    padding: 20px 10px;
+    align-items: center;
+
+}
+
+html {
+    color: black;
+    background-color: aliceblue;
+}
+
+a {
+    text-decoration: none;
+    margin: 0 20px;
+    color: bisque;
+}
+
+a:last-child {
+    margin-right: 10px;
+}
+
+main {
+    display: flex;
+    margin: 0 20px;
+    text-align: justify;
+
+}
+
+section:first-child {
+    flex: 2;
+}
+
+section:last-child {
+    flex: 3;
+    margin-left: 20px;
+}
+
+img {
+    float: left;
+    margin-right: 20px;
+}
+
+section a {
+    padding: 20px;
+    background-color: green;
+
+}
+
+.btn {
+    display: block;
+    float: right;
+    border-radius: 6px;
+    padding: 10px;
+}
