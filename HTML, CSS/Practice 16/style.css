@@ -1,4 +1,9 @@
-div img {
+html {
+    background-color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#social img {
     width: 20px;
 }
 
@@ -11,42 +16,74 @@ header {
     padding: 10px;
 }
 
-html {
-    background-color: whitesmoke;
-}
-
-main {
+.form-input-box {
     width: 500px;
     margin: 50px auto auto;
     background-color: white;
-
 }
 
-button {
-    position: absolute;
-    border: 1px solid rgb(43, 143, 143);
-    background-color: rgb(43, 143, 143);
+#form-input {
     border-radius: 5px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
 
-input {
-    border: 1px solid rgb(209, 209, 209);
-    background-color: whitesmoke;
-    border-radius: 5px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    width: 300px;
-
+#form-input button {
+    border: 1px solid rgb(43, 143, 143);
+    background-color: rgb(43, 143, 143);
+    padding: 0 40px;
 }
 
-p {
-    margin: 0;
+#form-input input {
+    border: 1px solid rgb(209, 209, 209);
+    background-color: whitesmoke;
+    width: 100%;
+}
+
+#form-input-container {
+    margin: 20px;
+}
+
+#form-input-container p {
+    margin-top: 0;
     text-transform: capitalize;
-    text-align: left;
 }
 
 h2 {
     text-align: center;
+}
+
+#form-input {
+    display: flex;
+}
+
+.task-name {
+    text-transform: capitalize;
+}
+
+section>div.tasks {
+    width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.task-links img {
+    width: 10px;
+}
+
+.single-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+}
+
+.all-tasks-container {
+    margin: 40px;
+}
+
+.shadowed-box {
+    box-shadow: 2px 4px 6px 2px rgb(184, 184, 184);
 }

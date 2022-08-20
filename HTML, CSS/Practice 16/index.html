@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -25,13 +26,36 @@
 
     </header>
     <main>
-        <div id="first box">
+        <div class="shadowed-box form-input-box">
             <h2>Your Tasks</h2>
-
-            <input type="text" placeholder="e.g. wash dishes"> <button>Add</button>
-            <p>There was an error</p>
-
+            <div id="form-input-container">
+                <div id="form-input">
+                    <input type="text" placeholder="e.g. wash dishes"> <button>Add</button>
+                </div>
+                <p>There was an error</p>
+            </div>
         </div>
+        <section class="all-tasks-container">
+            <div class="tasks">
+                <div class="shadowed-box single-task">
+                    <h3 class="task-name">Take out trash</h3>
+                    <div class="task-links">
+                        <img src="https://www.freeiconspng.com/thumbs/edit-icon-png/edit-editor-pen-pencil-write-icon--4.png"
+                            alt="edit">
+                        <img src="https://www.pngall.com/wp-content/uploads/5/Delete-Bin-Trash-Transparent.png"
+                            alt="delete">
+                    </div>
+                </div>
+                <div class="shadowed-box single-task">
+                    <h3 class="task-name">Walk the dog</h3>
+                    <div class="task-links">
+                        <img src="https://www.freeiconspng.com/thumbs/edit-icon-png/edit-editor-pen-pencil-write-icon--4.png"
+                            alt="edit">
+                        <img src="https://www.pngall.com/wp-content/uploads/5/Delete-Bin-Trash-Transparent.png"
+                            alt="delete">
+                    </div>
+                </div>
+        </section>
 
     </main>
 </body>
