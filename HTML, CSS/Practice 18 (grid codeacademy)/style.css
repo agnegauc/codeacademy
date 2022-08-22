@@ -1,0 +1,33 @@
+.item {
+    background-color: red;
+    width: 100%;
+    /* OR flex: 1; instead of width */
+    margin: 10px;
+    text-align: center;
+    color: white;
+    padding: 10vh 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.left-side,
+.right-side {
+    width: 50%;
+}
+
+.right-side {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.right-side>* {
+    width: 100%;
+}
+
+.left-side,
+.right-top,
+.right-bottom {
+    display: flex;
+}
