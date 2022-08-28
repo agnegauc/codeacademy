@@ -9,11 +9,98 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <header>
+        <nav>
+            <div class="left-header">
+                <a href="#"><img class="logo" src="logo.png" alt="Home" style="width: 100px"></a>
+                <a href="#">Shop</a>
+                <a href="#">About</a>
+                <a href="#">Help</a>
+                <input type="text" name="search" id="search" placeholder="Search" aria-label="Search">
+            </div>
 
+            <div class="right-header">
+                <a href="#"><img id="cart" src="https://cdn-icons-png.flaticon.com/512/1413/1413908.png"
+                        alt="Shopping cart" style="width: 20px;"></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="shirts container">
+            <div class="box">
+                <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                    alt="Black T-shirt">
+                <div class="undertext">
+                    <h3>T-shirt 1</h3>
+                    <h4>30.00 €</h4>
+                    <button type="button">Add to cart</button>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+                    alt="White T-shirt">
+                <div class="undertext">
+                    <h3>T-shirt 2</h3>
+                    <h4>40.00 €</h4>
+                    <button type="button">Add to cart</button>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                    alt="White T-shirt">
+                <div class="undertext">
+                    <h3>T-shirt 3</h3>
+                    <h4>50.00 €</h4>
+                    <button type="button">Add to cart</button>
+                </div>
+            </div>
+        </section>
+        <section class="bags container">
+            <div class="box">
+                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmFja3BhY2t8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+                    alt="Black backpack">
+                <div class="undertext">
+                    <h3>Bag 1</h3>
+                    <h4>100.00 €</h4>
+                    <button type="button">Add to cart</button>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://images.unsplash.com/photo-1580087256394-dc596e1c8f4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YmFja3BhY2t8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+                    alt="Yellow backpack">
+                <div class="undertext">
+                    <h3>Bag 2</h3>
+                    <h4>150.00 €</h4>
+                    <button type="button">Add to cart</button>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://images.unsplash.com/photo-1622260614153-03223fb72052?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YmFja3BhY2t8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+                    alt="Green backpack">
+                <div class="undertext">
+                    <h3>Bag 3</h3>
+                    <h4>200.00 €</h4>
+                    <button type="button">Add to cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="grid-container">
+        <ul class="links">
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="https://www.virgin.com/virgin-unite/latest/what-does-responsible-sourcing-actually-mean"
+                    target="_blank">Responsible
+                    sourcing</a>
+            <li><a href="#">Careers</a></li>
+            </li>
+        </ul>
+        <p> Copyright</p>
+    </footer>
 </body>
 
 </html>
