@@ -1,3 +1,5 @@
+// Example 1
+
 function getMultipliedByTwo(number) {
     return number * 2; // return vietoj console.log, nes po console.log į nieką nežiūrėtų
 }
