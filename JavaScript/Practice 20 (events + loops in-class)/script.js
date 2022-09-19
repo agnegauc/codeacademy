@@ -1,10 +1,16 @@
 const specialCodeElement = document.getElementById("specialCode");
 let count = 0;
 
-// adding this "for" loop to Practice 18
+// Adding this commented "for" loop to Practice 18:
 
-for (let index = 0; index < 100; index++) {
-  document.getElementById("count").append(index);
+// for (let index = 0; index < 100; index++) {
+//   document.getElementById("count").append(index);
+// }
+
+// With the following "for" console-logins A, S ir D raides:
+
+for (const element of ["A", "S", "D"]) {
+  console.log(element);
 }
 
 specialCodeElement.addEventListener("mouseover", () => {
