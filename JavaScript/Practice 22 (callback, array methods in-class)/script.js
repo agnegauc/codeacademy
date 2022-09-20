@@ -9,7 +9,7 @@ const logGreeting = () => {
   console.log("Laba diena.");
 };
 
-// showAlert(logGreeting);
+showAlert(logGreeting);
 
 // filter:
 
