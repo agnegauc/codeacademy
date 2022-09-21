@@ -66,15 +66,3 @@ function thirdAnswer() {
     alert("Yay");
   } else alert("Nay");
 }
-
-// Ex. 9, JS events, Lesson 5
-
-const doNotClick = document.createElement("h4");
-doNotClick.innerHTML = "Nespauskite mygtuko";
-document.body.append(doNotClick);
-
-document.querySelector("button").addEventListener("click", notListening); // Works only with the first button
-
-function notListening() {
-  document.querySelector("h4").textContent = "Neklausote manęs";
-}
