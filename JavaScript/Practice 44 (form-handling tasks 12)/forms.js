@@ -8,3 +8,15 @@ function addNameToList(event) {
 }
 
 document.querySelector("input").addEventListener("blur", addNameToList); // Kažkodėl netiko "form" vietoj "input" čia
+
+// codeAcademy solution:
+
+// function addNameToList(event) {
+//   const name = event.target.value.trim();
+//   const outputElement = document.querySelector("p");
+//   if (name) {
+//     outputElement.innerText += `${name}, `;
+//   }
+// }
+
+// document.getElementById('name').addEventListener('blur', addNameToList);
