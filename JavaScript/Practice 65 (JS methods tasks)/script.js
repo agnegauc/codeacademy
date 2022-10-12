@@ -87,3 +87,24 @@ const isSumOverHundred = (number1, number2) => number1 + number2 > 100; // Nerei
 console.log(isSumOverHundred(71, 30));
 
 // Ex. 9
+
+const people = [
+  { name: "Alfredas", age: 25 },
+  { name: "Jonas", age: 25 },
+  { name: "Kasparas", age: 20 },
+  { name: "Adomas", age: 25 },
+];
+
+console.log(
+  people
+    .sort((a, b) => (a.name > b.name ? 1 : -1)) // if the age is the same, sort by name
+    .sort((a, b) => a.age - b.age) // main task - sort by age
+);
+
+// Ex. 10
+
+const holidays = ["2020-01-01", "2020-05-25"];
+
+console.log(holidays.some((v) => v === "2020-01-01"));
+
+// Ex. 11
