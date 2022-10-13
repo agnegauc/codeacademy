@@ -108,3 +108,18 @@ const holidays = ["2020-01-01", "2020-05-25"];
 console.log(holidays.some((v) => v === "2020-01-01"));
 
 // Ex. 11
+
+const newNumbers = [1, 2, 4, 5, 6];
+
+const missingNumber = (array) =>
+  array.find((x, i) => x + 1 !== array[i + 1]) + 1;
+
+console.log(missingNumber(newNumbers));
+
+// Explaining the above:
+
+const missingNumberSimple = newNumbers.find(
+  (x, i) => x + 1 !== newNumbers[i + 1]
+);
+// 1+1 !== newNumbers[0+1] (=== newNUmbers[1] === 2)
+console.log(missingNumberSimple);
