@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        textarea:hover {
+            background-color: purple;
+        }
+
+        input:focus {
+            border: 3px dotted violet;
+        }
+
+        input:checked {
+            padding: 20px;
+            margin: 100px;
+            height: 40px;
+            width: 300px;
+            background-color: red;
+        }
+
+        a:active {
+            border: 1px solid red;
+        }
+
+        a:link {
+            color: blanchedalmond;
+        }
+
+        a:visited {
+            color: green
+        }
+
+        form {
+            margin: 3rem 2rem;
+
+            border: 2px solid black;
+            width: max-content;
+            padding: 2rem;
+            border-radius: 40px;
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        form fieldset {
+            display: inline;
+            margin: 20px auto;
+
+        }
+
+        form legend {
+            font-weight: 550;
+            text-align: center;
+            font-family: "Roboto mono";
+        }
+
+        form input {
+            text-align: center;
+
+            border-radius: 15px;
+            padding: 0 5px;
+        }
+
+        form input:invalid {
+            color: red;
+            background-color: rgba(159, 68, 68, 0.248);
+        }
+
+        form button {
+            margin: 0 auto;
+            padding: 1rem 4rem;
+            background-color: whitesmoke;
+            border: 2px dotted rebeccapurple;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div aria-label="megstamiausi eilerasciai">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim sunt, natus earum iure eum rem perspiciatis
+            non doloribus sit ad explicabo optio, maxime provident temporibus at inventore consequuntur beatae labore!
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim sunt, natus earum iure eum rem perspiciatis
+            non doloribus sit ad explicabo optio, maxime provident temporibus at inventore consequuntur beatae labore!
+        </p>
+    </div>
+
+    <form action="https://serveris.lt/registracija" method="post">
+        <fieldset>
+            <legend>Vartotojo vardas</legend>
+            <input required placeholder="user123" name='username' aria-label="vartotojo-vardo-laukelis" />
+        </fieldset>
+
+        <fieldset>
+            <legend>El. paštas</legend>
+            <input type='email' name='email' placeholder="you@gmail.com" required />
+        </fieldset>
+
+        <fieldset>
+            <legend>Slaptažodis</legend>
+            <input placeholder="********" type='password' name="password" required />
+        </fieldset>
+
+        <fieldset>
+            <legend>Mėgstamiausias sportas</legend>
+
+            <select name="megstamiausiasSportas">
+                <option value="krepsinis">Krepšinis</option>
+                <option value="futbolas">Futbolas</option>
+                <option value="Šachmatai">Šachmatai</option>
+                <option value="Regbis" selected>Regbis</option>
+            </select>
+        </fieldset>
+
+        <div>
+            <fieldset>
+                <legend>Vartotojo vardas</legend>
+                <input required placeholder="user123" name='username' aria-label="vartotojo-vardo-laukelis" />
+            </fieldset>
+
+            <fieldset>
+                <legend>El. paštas</legend>
+                <input type='email' name='email' placeholder="you@gmail.com" required />
+            </fieldset>
+
+            <fieldset>
+                <legend>Slaptažodis</legend>
+                <input placeholder="********" type='password' name="password" required />
+            </fieldset>
+
+            <fieldset>
+                <legend>Mėgstamiausias sportas</legend>
+
+                <select name="megstamiausiasSportas">
+                    <option value="krepsinis">Krepšinis</option>
+                    <option value="futbolas">Futbolas</option>
+                    <option value="Šachmatai">Šachmatai</option>
+                    <option value="Regbis" selected>Regbis</option>
+                </select>
+            </fieldset>
+
+        </div>
+        <button type="submit">Registruotis</button>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #loginInfo>legend {
+            margin-bottom: 16px;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        body>form {
+            font-family: 'Roboto Mono', monospace;
+            width: max-content;
+            display: grid;
+            margin: 32px;
+            padding: 32px;
+            border-radius: 30px;
+            border: 2px solid black;
+            text-align: center;
+        }
+
+        #loginInfo input {
+            text-align: center;
+            margin: 0 auto;
+            width: 150px;
+            height: 20px;
+            border-radius: 20px;
+            border: 1px solid grey
+        }
+
+        #loginInfo {
+            display: grid;
+            margin-bottom: 8px;
+        }
+
+        form button {
+            width: 200px;
+
+            margin: 16px auto;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        form fieldset {
+            border: 0;
+        }
+
+        fieldset>legend {
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div id="loginInfo">
+            <legend>Prisijungimas</legend>
+
+            <fieldset>
+                <legend>Jūsų el. paštas</legend>
+                <input type="email" required />​
+            </fieldset>
+
+            <fieldset>
+                <legend>Jūsų slaptažodis</legend>
+                <input type="password" required />​
+            </fieldset>
+
+        </div>
+        <button type="submit">Pateikti</button>
+    </form>
+</body>
+
+</html>
