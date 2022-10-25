@@ -8,7 +8,7 @@ const getProfileData = async () => {
   displayProfile(randomProfile);
 };
 
-getProfileData();
+await getProfileData();
 
 /* CodeAcademy way to write the same:  
 

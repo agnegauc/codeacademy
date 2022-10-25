@@ -1,0 +1,23 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+header {
+    background-color: #03d3b2;
+    color: white;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto; 
+}
+
+header div {
+    padding: 2rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
