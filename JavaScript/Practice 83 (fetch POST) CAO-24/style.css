@@ -21,3 +21,20 @@ nav {
     justify-content: space-between;
 }
 
+#properties-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.property-card {
+    width: 16rem;
+    /* flex-wrap: wrap; */
+    border: 1px solid whitesmoke;
+    height: 25rem;
+}
+
+.property-card img {
+    width: 100%;
+    height: auto;
+}
