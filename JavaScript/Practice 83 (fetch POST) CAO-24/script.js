@@ -43,9 +43,6 @@ const getProperties = async () => {
     const response = await fetch("https://radial-reinvented-shoe.glitch.me");
     const fetchedProperties = await response.json();
     return fetchedProperties; // reikia returnint būtinai!
-    renderFilterButtons([
-      ...new Set(state.properties.map((entry) => entry.city)),
-    ]);
   } catch (error) {
     console.error(error);
   }
