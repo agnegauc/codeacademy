@@ -7,18 +7,70 @@ header {
     color: white;
 }
 
+header div {
+    padding: 3rem 0;
+}
+
+header h1,
+header h2 {
+  margin: 0.2;
+}
+
+nav {
+    display: flex;
+}
+
 .wrapper {
     width: 80%;
     margin: 0 auto; 
 }
 
-header div {
-    padding: 2rem 0;
+button {
+    /* display: flex; */
+    color: black;
+    background-color: white;
+    padding: 0.5rem 1.4rem;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    /* align-items: center; */
+    /* flex-wrap: nowrap; */
+}
+  
+button:hover {
+    color: #03d3b2;
+    border: 1px solid #03d3b2;
 }
 
-nav {
+#filters-container {
     display: flex;
-    justify-content: space-between;
+    width: 70%;
+    /* justify-content: flex-start; */
+    margin-bottom: 2.4rem;
+    gap: 0.3rem;
+}
+
+#add-property-button-container {
+    /* width: 30%; */
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2.4rem;
+}
+
+.add-property-button {
+    color: white;
+    background-color: #03d3b2;
+    border: 1px solid white;
+    border-radius: 6px;
+    /* align-items: center; */
+    padding: 0.5rem 1.4rem;
+    text-decoration: none;
+}
+
+.add-property-button:hover {
+    background-color: white;
+    color: #03d3b2;
+    border: 1px solid #03d3b2;
 }
 
 #properties-container {
@@ -37,4 +89,44 @@ nav {
 .property-card img {
     width: 100%;
     height: auto;
+}
+
+.property-card img {
+    width: 100%;
+    height: auto;
+}
+  
+.property-card h1 {
+    margin: 2rem 1rem 0.4rem 1rem;
+}
+  
+.property-card p {
+    margin: 0 1rem 2rem 1rem;
+}
+
+#add-property-form {
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+  
+#add-property-form input {
+    padding: 0.6rem;
+    border: 1px solid lightgray;
+    font-size: 1rem;
+    border-radius: 6px;
+}
+  
+#add-property-form select {
+    padding: 0.6rem;
+    border: 1px solid lightgray;
+    font-size: 1rem;
+    border-radius: 6px;
+    background-color: white;
+}
+  
+#add-property-form button {
+    width: 10rem;
 }
