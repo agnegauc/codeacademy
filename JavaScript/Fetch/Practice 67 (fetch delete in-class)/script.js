@@ -1,6 +1,6 @@
 import { displayPost } from "./displayPost.js";
 
-// Kai paspaudžiam mygtuką - vieną ištrina
+// Kai paspaudžiam mygtuką - vieną ištrina.
 
 const deleteButton = document.querySelector("#deleteButton");
 
