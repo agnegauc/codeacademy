@@ -1,6 +1,6 @@
 const express = require("express");
 
-const app = express(); // kviečiam express
+const app = express(); // kviečiame express
 const PORT = 3_000;
 
 app.use(express.json()); // gali būti daug app.use() kvietimų skirtingų
