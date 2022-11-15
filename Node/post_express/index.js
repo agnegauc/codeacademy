@@ -7,7 +7,7 @@ app.use(express.json()); // gali būti daug app.use() kvietimų skirtingų
 
 // Vietoj req parametruose rašom underscore, nes req parametras yra nenaudojamas, jis tik placeholder
 app.post("/", (_, res) => {
-  res.send({ message: "Sveiki atvykę į projektą!" }); // atsakymas išsiųs tam tikrą informaciją (šiuo atveju message)
+  res.send({ message: "Sveiki atvykę į projektą!" }).end(); // atsakymas išsiųs tam tikrą informaciją (šiuo atveju message)
 });
 
 app.listen(PORT, () => {

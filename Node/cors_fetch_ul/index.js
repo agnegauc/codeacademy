@@ -8,7 +8,7 @@ const cars = ["Porsche", "BMW", "VW"];
 app.use(cors());
 
 app.get("/cars", (req, res) => {
-  res.status(200).send(cars);
+  res.status(200).send(cars).end();
 });
 
 app.listen(PORT, () => {

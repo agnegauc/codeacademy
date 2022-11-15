@@ -11,7 +11,7 @@ console.log(PORT); // undefined before we configure dotenv library
 app.use(express.json());
 
 app.post("/", (_, res) => {
-  res.send({ message: "Welcome to my project" });
+  res.send({ message: "Welcome to my project" }).end();
 });
 
 app.listen(PORT, () => {

@@ -22,7 +22,7 @@ app.post("/tshirt/:id", (req, res) => {
 
   // Checking if we have a logo in the request body. If not, send an error:
   if (!logo) {
-    res.status(418).send({ message: "We need a logo!" });
+    res.status(418).send({ message: "We need a logo!" }).end();
   }
 
   res.send({

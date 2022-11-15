@@ -4,7 +4,7 @@ const express = require("express"); // importuojame express
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("OK");
+  res.send("OK").end();
 });
 // App (t.y. express instancija) klausosi GET signalo į "/" URL. Jei užtiks, paleis antrą parametrą - arrow funkciją.
 // Arrow funkcija turi du parametrus - request ir response. Request tai ką vartotojas paduoda, o response - ką mes grąžiname atgal.
