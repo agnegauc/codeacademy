@@ -64,6 +64,3 @@ app.get("/date", (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server is working on port ${PORT}`));
-
-// PATCH demo versija su netobulumais:
-// https://github.com/andriuszaz/codeacademy-praktika/blob/main/NodeJs/999-inclass-practice/11_15-GET-POST-DELETE-PATCH-dynamic-routing-filter-by-criteria/index.js#L98
