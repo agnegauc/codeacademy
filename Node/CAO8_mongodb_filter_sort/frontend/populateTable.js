@@ -19,6 +19,7 @@ const displayPets = (pets) => {
 
 const ageHeading = document.querySelector("#ageHeading");
 let fetchURL = "http://localhost:8000/pets/byyoungest";
+let selectedTypes = [];
 
 const getPets = async () => {
   if (ageHeading.textContent === "Age (Asc)") {
@@ -28,19 +29,38 @@ const getPets = async () => {
   try {
     const response = await fetch(fetchURL);
     const pets = await response.json();
+    const filteredPets = pets.filter(
+      (pet) =>
+        pet.type === selectedTypes[0] ||
+        pet.type === selectedTypes[1] ||
+        pet.type === selectedTypes[2]
+    );
 
-    displayPets(pets);
+    displayPets(filteredPets);
   } catch (error) {
     console.error(error);
   }
 };
 
-await getPets();
-
 document.querySelector("#ageHeading").addEventListener("click", async () => {
   if (ageHeading.textContent === "Age (Asc)") {
     ageHeading.textContent = "Age (Dsc)";
   } else ageHeading.textContent = "Age (Asc)";
+
+  await getPets();
+});
+
+document.querySelector("nav").addEventListener("click", async (event) => {
+  const selectedType = event.target.textContent.toLowerCase();
+  const isCurrentlySelected = selectedTypes.includes(selectedType);
+
+  if (isCurrentlySelected) {
+    selectedTypes = selectedTypes.filter((type) => type !== selectedType);
+    event.target.classList.remove("selectedButton");
+  } else {
+    selectedTypes.push(selectedType);
+    event.target.classList.add("selectedButton");
+  }
 
   await getPets();
 });
