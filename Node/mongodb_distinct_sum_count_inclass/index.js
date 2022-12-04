@@ -34,6 +34,7 @@ app.get("/uniqueNames", async (_, res) => {
     throw Error(error);
   }
 });
+
 app.get("/countNames/:firstName", async (req, res) => {
   const { firstName } = req.params;
   try {
@@ -88,6 +89,8 @@ app.get("/sumOfOrders/:name", async (req, res) => {
   }
 });
 
+// General example; includes match, group, sort, distinct, find
+
 app.get("/users", async (_, res) => {
   const pipeline = [
     {
@@ -103,7 +106,7 @@ app.get("/users", async (_, res) => {
     },
     {
       $sort: {
-        totalOrders: -1,
+        totalOrders: -1, // -1 DESC, 1 ASC
       },
     },
   ];
