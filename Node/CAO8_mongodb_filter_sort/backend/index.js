@@ -1,4 +1,4 @@
-const { MongoClient, ObjectId } = require("mongodb");
+const { MongoClient } = require("mongodb");
 const express = require("express");
 const cors = require("cors");
 
@@ -21,7 +21,7 @@ app.get("/pets", async (_, res) => {
 
     await con.close();
 
-    return res.send(data).end(); // ar čia reikia return?
+    return res.send(data).end(); // nebūtinas return čia
   } catch (error) {
     res.status(500).send({ error }).end();
     throw Error(error);

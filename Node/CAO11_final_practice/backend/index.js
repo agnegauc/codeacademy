@@ -67,7 +67,7 @@ app.post("/memberships", async (req, res) => {
 
     await con.close();
 
-    return res.send(data).end();
+    return res.send(data).end(); // nebūtinas return, nes neturime daugiau kodo šiame block'e
   } catch (error) {
     res.status(500).send({ error }).end();
     throw Error(error);
@@ -98,6 +98,30 @@ app.delete("/memberships/:id", async (req, res) => {
       .status(404)
       .send({ message: "A membership with the provided id does not exist." })
       .end();
+  } catch (error) {
+    res.status(500).send({ error }).end();
+    throw Error(error);
+  }
+});
+
+// order: asc or desc. Order can be only asc or desc
+
+app.get("/users/:order", async (req, res) => {
+  const { id } = req.params;
+
+  // tofinish
+
+  try {
+    const con = await client.connect();
+    const data = await con
+      .db(DB)
+      .collection(SERVICESCOLLECTION)
+      .find()
+      .toArray();
+
+    await con.close();
+
+    return res.send(data).end();
   } catch (error) {
     res.status(500).send({ error }).end();
     throw Error(error);
