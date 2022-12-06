@@ -61,6 +61,9 @@ app.get("/sumOfOrders/:name", async (req, res) => {
         firstName: name,
       },
     },
+    // To match only those named, e.g., Mike and Karen, this is how it would look like:
+
+    /* {$match: {customer: {$in: ["Mike", "Karen"]}}} */
     {
       $group: {
         _id: "$firstName",
@@ -100,7 +103,7 @@ app.get("/users", async (_, res) => {
     },
     {
       $group: {
-        _id: "$firstName",
+        _id: "$firstName", // grouping by firstName, this is gonna be a distinct "id"
         totalOrders: { $sum: "$numberOfOrders" },
       },
     },
