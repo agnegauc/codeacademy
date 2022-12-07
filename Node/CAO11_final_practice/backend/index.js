@@ -104,24 +104,59 @@ app.delete("/memberships/:id", async (req, res) => {
   }
 });
 
-// order: asc or desc. Order can be only asc or desc
-
-app.get("/users/:order", async (req, res) => {
-  const { id } = req.params;
-
-  // tofinish
+app.get("/users/:order?", async (req, res) => {
+  const { order } = req.params;
 
   try {
     const con = await client.connect();
-    const data = await con
+    const users = await con
       .db(DB)
-      .collection(SERVICESCOLLECTION)
+      .collection(USERSCOLLECTION)
       .find()
+      .sort({ firstName: order?.toLowerCase() === "desc" ? -1 : 1 })
       .toArray();
 
     await con.close();
 
-    return res.send(data).end();
+    return res.send(users).end();
+  } catch (error) {
+    res.status(500).send({ error }).end();
+    throw Error(error);
+  }
+});
+
+app.post("/users", async (req, res) => {
+  const { firstName, lastName, email, service_id } = req.body;
+
+  if (!firstName || !lastName || !email || !service_id) {
+    res
+      .status(400)
+      .send("Name, surname, email and / or service id are not defined.")
+      .end();
+    return;
+  }
+  if (
+    typeof firstName !== "string" ||
+    typeof lastName !== "string" ||
+    typeof email !== "string" ||
+    typeof service_id !== "string"
+  ) {
+    res
+      .status(400)
+      .send({ message: "Invalid name, surname, email and / or service id." })
+      .end();
+    return;
+  }
+  try {
+    const con = await client.connect();
+    const data = await con
+      .db(DB)
+      .collection(USERSCOLLECTION)
+      .insertOne({ firstName, lastName, email, service_id });
+
+    await con.close();
+
+    res.send(data).end();
   } catch (error) {
     res.status(500).send({ error }).end();
     throw Error(error);

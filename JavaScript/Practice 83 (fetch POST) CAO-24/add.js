@@ -31,7 +31,7 @@ form.addEventListener("submit", async (event) => {
     if (response.ok) {
       displayStatus(response.ok, "Property successfully added.");
     } else {
-      throw new Error(response.statusText);
+      throw Error(response.statusText);
     }
   } catch (error) {
     displayStatus(false, `Something went wrong. Server returned: ${error}.`);

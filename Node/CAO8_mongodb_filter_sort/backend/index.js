@@ -126,4 +126,28 @@ app.get("/pets/:type", async (req, res) => {
   }
 });
 
+// demo route below. ? allows to not enter the orders param. Without the question mark, postman shows Cannot GET
+
+app.get("/animals/:types?/:order?", async (req, res) => {
+  const { types } = req.params;
+  const { order } = req.params;
+
+  try {
+    const con = await client.connect();
+    const pets = await con
+      .db(DB)
+      .collection(COLLECTION)
+      .find({ type: { $in: types?.split(",") } })
+      .sort({ age: order?.toLowerCase() === "dsc" ? -1 : 1 })
+      .toArray();
+
+    await con.close();
+
+    return res.send(pets).end();
+  } catch (error) {
+    res.status(500).send({ error }).end();
+    throw Error(error);
+  }
+});
+
 app.listen(PORT, () => console.info(`Server is running on port ${PORT}`));

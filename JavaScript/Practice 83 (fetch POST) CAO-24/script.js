@@ -42,6 +42,7 @@ const getProperties = async () => {
   try {
     const response = await fetch("https://radial-reinvented-shoe.glitch.me");
     const fetchedProperties = await response.json();
+
     return fetchedProperties; // reikia returnint būtinai!
   } catch (error) {
     console.error(error);
@@ -49,6 +50,7 @@ const getProperties = async () => {
 };
 
 const properties = await getProperties(); // kviečiam būtinai su await
+
 state.properties = properties;
 
 renderPropertyCards(state.properties);
