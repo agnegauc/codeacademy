@@ -1,0 +1,7 @@
+header > nav {
+    text-align: center;
+}
+
+.title-with-button-container {
+    display: flex;
+}
