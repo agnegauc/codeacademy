@@ -30,7 +30,7 @@ app.get("/", async (_, res) => {
     res.send(result[0]).end(); // [0] added because result is an array of two. First is the answer, second - buffer
   } catch (err) {
     res.send(err).end();
-    return console.error();
+    return console.error(); // better to use instead of throw error
   }
 });
 
