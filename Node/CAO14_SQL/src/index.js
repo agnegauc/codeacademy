@@ -2,9 +2,9 @@ const mysql = require("mysql2/promise");
 const express = require("express");
 const app = express();
 
-require("dotenv").config();
+require("./config"); // instead of require("dotenv").config();
 
-const PORT = 8_000;
+const SERVER_PORT = +process.env.SERVER_PORT || 8_080;
 
 const MYSQL_CONFIG = {
   host: process.env.host,
@@ -78,4 +78,12 @@ app.post("/shirt", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => console.info(`Server is running on port ${PORT}`));
+// If the route is different than the previously defined ones:
+
+app.get("*", async (_, res) => {
+  res.status(404).send("Invalid URL").end();
+});
+
+app.listen(SERVER_PORT, () =>
+  console.info(`Server is running on port ${SERVER_PORT}`)
+);
