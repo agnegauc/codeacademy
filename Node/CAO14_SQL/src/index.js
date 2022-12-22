@@ -60,7 +60,7 @@ app.post("/shirt", async (req, res) => {
   const size = req.body?.size?.trim();
   const price = req.body?.price;
 
-  // pridėti if'us
+  // Pridėti if'us
 
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
