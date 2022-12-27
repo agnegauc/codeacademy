@@ -78,6 +78,23 @@ app.post("/shirt", async (req, res) => {
   }
 });
 
+app.get("/shirts", async (_, res) => {
+  try {
+    const con = await mysql.createConnection(MYSQL_CONFIG);
+
+    const result = await con.execute(
+      `SELECT * FROM shirts ORDER BY price ASC LIMIT 5`
+    );
+
+    await con.end();
+
+    res.send(result[0]).end();
+  } catch (err) {
+    res.status(500).send(err).end();
+    return console.error(err);
+  }
+});
+
 // If the route is different than the previously defined ones:
 
 app.get("*", async (_, res) => {
