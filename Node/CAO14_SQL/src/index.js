@@ -78,13 +78,39 @@ app.post("/shirt", async (req, res) => {
   }
 });
 
-app.get("/shirts", async (_, res) => {
+// Question mark in req params makes the parameter optional:
+
+app.get("/shirts/:size?", async (req, res) => {
+  const size = req.params.size;
+  const limit = +req.query.limit; // /shirts/M?limit=20
+  const sizes = ["XS", "S", "M", "L", "XL"];
+
+  const query =
+    size && limit
+      ? `SELECT * FROM shirts WHERE size = '${size}' ORDER BY price ASC LIMIT ${limit}`
+      : `SELECT * FROM shirts ORDER BY price DESC LIMIT 5`;
+
+  if (size && !sizes.includes(size)) {
+    return res.status(400).send("Legit sizes: XS, S, M, L, XL").end();
+  }
+
+  if (
+    limit &&
+    (limit < 0 ||
+      limit >= 10 ||
+      Number.isNaN(limit) ||
+      typeof limit !== "number")
+  ) {
+    return res
+      .status(400)
+      .send({ error: `Limit incorrect. Please choose a number from 1 to 10.` })
+      .end();
+  }
+
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
 
-    const result = await con.execute(
-      `SELECT * FROM shirts ORDER BY price ASC LIMIT 5`
-    );
+    const result = await con.execute(query);
 
     await con.end();
 
