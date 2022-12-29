@@ -17,7 +17,8 @@ const MYSQL_CONFIG = {
 app.use(express.json());
 
 app.post("/table", async (req, res) => {
-  const name = req.body?.name.trim();
+  const name = mysql.escape(req.body?.name.trim());
+  const cleanName = name.replaceAll("'", "");
 
   if (!name) {
     return res.status(400).send(`Incorrect table name provided: ${name}`).end();
@@ -27,7 +28,7 @@ app.post("/table", async (req, res) => {
     const con = await mysql.createConnection(MYSQL_CONFIG);
 
     const result = await con.execute(
-      `CREATE table ${name}(id int NOT NULL AUTO_INCREMENT, brand varchar(35), model varchar(35), size varchar(35), price decimal(35,2), PRIMARY KEY (id))`
+      `CREATE table ${cleanName}(id int NOT NULL AUTO_INCREMENT, brand varchar(35), model varchar(35), size varchar(35), price decimal(35,2), PRIMARY KEY (id))`
     );
 
     await con.end();
@@ -115,6 +116,28 @@ app.get("/shirts/:size?", async (req, res) => {
     await con.end();
 
     res.send(result[0]).end();
+  } catch (err) {
+    res.status(500).send(err).end();
+    return console.error(err);
+  }
+});
+
+app.delete("/table", async (req, res) => {
+  const name = mysql.escape(req.body?.name.trim());
+  const cleanName = name.replaceAll("'", "");
+
+  if (!name) {
+    return res.status(400).send(`Incorrect table name provided: ${name}`).end();
+  }
+
+  try {
+    const con = await mysql.createConnection(MYSQL_CONFIG);
+
+    const result = await con.execute(`DROP TABLE ${cleanName}`);
+
+    await con.end();
+
+    res.status(201).send("Table successfully dropped").end();
   } catch (err) {
     res.status(500).send(err).end();
     return console.error(err);
