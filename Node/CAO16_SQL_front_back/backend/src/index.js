@@ -1,5 +1,6 @@
 const mysql = require("mysql2/promise");
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
 require("./config"); // instead of require("dotenv").config();
@@ -15,6 +16,7 @@ const MYSQL_CONFIG = {
 };
 
 app.use(express.json());
+app.use(cors());
 
 // via MySQL Workbench:
 

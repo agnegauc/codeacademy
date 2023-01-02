@@ -1,0 +1,75 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 7pt;
+    color: gray;
+    font-weight: 200;
+    letter-spacing: 0.25pt;
+  }
+
+header {
+    background-color: rgb(243, 243, 243);
+    padding: 20px 50px;
+}
+
+.card {
+    width: 240px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+img {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+}
+
+.img-container {
+    border-top: 1px solid rgb(236, 236, 236);
+    border-bottom: 1px solid rgb(236, 236, 236);
+    padding: 20px;
+}
+
+p {
+    padding: 0 20px 10px 20px;
+    margin: 0;
+}
+
+.card-delete {
+    padding-top: 10px;
+    text-transform: uppercase;
+}
+
+.card-delete:hover, a:hover {
+    font-weight: 600;
+    color: rgb(182, 65, 65);
+    cursor:pointer;
+}
+
+.card-title {
+    padding-top: 2px;
+}
+
+h3 {
+    color: black;
+    font-weight: 300;
+    font-size: 12pt;
+    margin: 0;
+    padding: 10px 20px 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+}
+
+a:nth-child(2) {
+    padding: 0 20px;
+}
+
+#cards-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.wrapper {
+    padding: 20px 50px;
+}
