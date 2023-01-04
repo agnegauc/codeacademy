@@ -67,9 +67,28 @@ a:nth-child(2) {
 
 #cards-container {
     display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
     justify-content: space-evenly;
 }
 
 .wrapper {
     padding: 20px 50px;
+}
+
+input {
+    display: block;
+    margin-top: 5px;
+    width: 300px;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color:rgb(177, 175, 175); 
+}
+
+input::placeholder {
+    color: rgb(177, 175, 175);
+}
+
+.input-container {
+    padding: 10px 0;
 }

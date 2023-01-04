@@ -18,6 +18,7 @@ const displayCars = (cars) => {
     imgContainer.className = "img-container";
     title.className = "card-title";
     deleteButton.className = "card-delete";
+    deleteButton.id = car.id;
 
     imgContainer.append(image);
     card.append(numberplates, title, imgContainer, deleteButton);
@@ -25,14 +26,13 @@ const displayCars = (cars) => {
   });
 };
 
-const displayEmptyMessage = () => {
+const displayMessage = (message) => {
   const cardsContainer = document.body.querySelector("#cards-container");
-  const message = document.createElement("p");
+  const messageElement = document.createElement("p");
 
-  message.textContent =
-    "There are no cars at the moment. Please add a car or try again later.";
+  messageElement.textContent = message;
 
-  cardsContainer.append(message);
+  cardsContainer.append(messageElement);
 };
 
 const getCars = async () => {
@@ -41,11 +41,15 @@ const getCars = async () => {
     const cars = await response.json();
 
     if (cars.length < 1) {
-      return displayEmptyMessage();
+      return displayMessage(
+        "There are no cars at the moment. Please add a car or try again later."
+      );
     } else displayCars(cars);
   } catch (error) {
-    console.error(error);
+    return displayMessage(
+      "Unable to connect to the server. Please contact the administrator."
+    );
   }
 };
 
-await getCars();
+export { getCars };
