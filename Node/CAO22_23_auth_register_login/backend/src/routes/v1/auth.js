@@ -2,11 +2,13 @@ const express = require("express"); // importuojame viską
 const mysql = require("mysql2/promise");
 const Joi = require("joi");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
-const { MYSQL_CONFIG } = require("../../config");
+const { MYSQL_CONFIG, jwtSecret } = require("../../config");
 
 const router = express.Router();
 
+// Joi naudojamas validavimui
 const userSchema = Joi.object({
   email: Joi.string().email().trim().lowercase().required(),
   password: Joi.string().required(),
@@ -18,7 +20,7 @@ router.post("/register", async (req, res) => {
     userData = await userSchema.validateAsync(userData);
   } catch (error) {
     console.log(error);
-    return res.status(400).send({ error: "Incorect data sent" });
+    return res.status(400).send({ error: "Incorect data sent" }).end();
   }
 
   // Jei duomenys teisingi, kreipiamės į duomenų bazę:
@@ -33,7 +35,7 @@ router.post("/register", async (req, res) => {
     );
     await con.end();
 
-    return res.send(data);
+    return res.send(data).end();
   } catch (error) {
     console.log(error);
     return res
@@ -48,7 +50,7 @@ router.post("/login", async (req, res) => {
     userData = await userSchema.validateAsync(userData);
   } catch (error) {
     console.log(error);
-    return res.status(400).send({ error: "Incorect email or password" });
+    return res.status(400).send({ error: "Incorect email or password" }).end();
   }
 
   try {
@@ -62,13 +64,19 @@ router.post("/login", async (req, res) => {
     if (data.length === 0) {
       return res
         .status(400)
-        .send({ error: "User with this email address does not exist." });
+        .send({ error: "User with this email address does not exist." })
+        .end();
     }
 
     const isAuthed = bcrypt.compareSync(userData.password, data[0].password);
 
     if (isAuthed) {
-      return res.send("OK");
+      const token = jwt.sign(
+        { id: data[0].id, email: data[0].email },
+        jwtSecret
+      ); // Sistemos slaptažodį tralala123 reikėtų talpinti saugiai, į dotenv
+
+      return res.send({ message: "Succesfully logged in", token }).end();
     }
 
     return res.status(400).send({ error: "Incorect email or password" });
