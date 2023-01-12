@@ -37,7 +37,7 @@ export const signIn = (req, res) => {
     expiresIn,
   }); // kartais vadinama access token
 
-  res.cookie("token", token, { maxAge: expiresIn * 1_000 });
+  res.cookie("token", token, { maxAge: expiresIn * 1_000 }); // cors cross-origin issue with credentials: 'include' (which are necessary for the cookies to be saved)
 
-  res.send("Signed in succesfuly").end();
+  res.send({ msg: "Signed in succesfuly", token }).end(); // token was not here initially, works via Postman without it
 };

@@ -12,7 +12,7 @@ export const getHome = (req, res) => {
 
   let payload = null;
 
-  console.log(req.cookies); // for learning purposes
+  console.log(req.cookies, token); // for learning purposes
 
   if (!token) {
     return res.status(401).send({ error: "User unauthorised" }).end();
